@@ -1,0 +1,19 @@
+.navbar {
+    background-color:bisque;
+}
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    list-style-type: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+
+}
+.nav-item {
+    color: blue;
+    margin: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid card">
+    <div class="row">
+      <a class="text-end" routerLink="/admin">Admin Login</a>
+      <div class="col-6">
+
+        <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png" class="image"/>
+      </div>
+        <div class="col-6">
+          <h1 class="text-center head">Login User</h1>
+            <form #myForm = "ngForm" class="form box shadow-lg">
+                <div class="mb-3">
+                  <p class="para">{{errorMsg}}</p>
+                  <label for="exampleInputEmail1" class="form-label"  >Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required [(ngModel)] = "userLogin.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type={{type}} class="form-control" id="exampleInputPassword1" name="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required [(ngModel)] = "userLogin.password">
+                  <input type="checkbox" (click)="check($event)"><label class="m-1">Show Password</label>
+                </div>
+                <button type="button" [disabled]="myForm.form.invalid" class="btn btn-primary" (click) = "loginUser()">Login</button>
+
+                <p class="mt-4">I don't have an Account <a routerLink="/register" class="link">Register</a></p>
+            </form>
+        </div>
+        
+        </div>
+</div>
+  

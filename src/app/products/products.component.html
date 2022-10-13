@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-2 p-2 shadow-lg" style="background-color:bisque" *ngFor="let x of productsLIst">
+            <img class="image" src="{{x.image}}" />
+            <h1 style="font-size: 14px;">{{x.title}}</h1>
+            <p> Price : ${{x.price}}</p>
+            <button class="btn btn-primary" (click)="addToCart(x)">Add to Cart</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container-fluid card">
+    <div class="row">
+      <div class="col-6">
+        
+        <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png" class="image"/>
+      </div>
+      <div class="col-6">
+          <h1 class="text-center head">Register User</h1>
+            <form #myForm = "ngForm" class="form shadow-lg">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" #name="ngModel" required [class.is-invalid]="name.invalid && name.touched" name="name" id="name" [(ngModel)] = "userModel.name">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required [(ngModel)] = "userModel.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type={{type}} class="form-control" id="exampleInputPassword1" name="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required [(ngModel)] = "userModel.password">
+                </div>
+                 <div class="mb-3">
+                  <label for="confirmPassword" class="form-label">Confirm Password</label>
+                  <input type={{type}} class="form-control" id="confirmPassword" name="confirmPassword" #confirmPassword="ngModel" [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" required [(ngModel)] = "userModel.confirmPassword">
+                  <input type="checkbox" (click)="check($event)"><label class="m-1">Show Password</label>
+                </div>
+                <button [disabled]="myForm.form.invalid" type="submit" class="btn btn-primary" routerLink="/login" (click)="onClick()">Register</button>
+
+                <p class="mt-4">Already I have an Account <a routerLink="/login" class="link">Login</a></p>
+            </form>
+            
+      </div>
+        
+    </div>
+</div>
+    
